@@ -1071,6 +1071,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 document.querySelectorAll('.qa-question').forEach(item => {
   item.addEventListener('click', () => {
     const parent = item.parentNode;
+    const answer = parent.querySelector('.qa-answer');
+
+    if (parent.classList.contains('active')) {
+      answer.style.maxHeight = null;
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+
     parent.classList.toggle('active');
   });
 });
