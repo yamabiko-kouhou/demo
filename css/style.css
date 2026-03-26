@@ -2238,7 +2238,7 @@ height:280px;
   padding: 0 18px;
   max-height: 0;
   overflow: hidden;
-  transition: 0.4s;
+  transition: max-height 0.4s ease;
 }
 
 .qa-answer p {
@@ -2247,9 +2247,9 @@ height:280px;
 }
 
 /* 開いたとき */
-.qa-item.active .qa-answer {
+/*.qa-item.active .qa-answer {
   max-height: 200px;
-}
+}*/
 
 .qa-item.active .icon {
   transform: rotate(45deg);
