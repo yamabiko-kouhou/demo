@@ -6,6 +6,15 @@ $('.dropdown').hover(
     $(this).children('.dropdown-menu').removeClass('open');
   }
 );
+
+$('.dropdown > a').on('click', function(e) {
+  if (window.innerWidth <= 1600) { // スマホ判定
+    e.preventDefault(); // ← リンク遷移止める
+
+    $(this).next('.dropdown-menu').slideToggle();
+    $(this).parent().toggleClass('open');
+  }
+});
 // スマホ用メニューの設定
 $(function() {
   $('.nav-btn-wrap').on('click', function() {
