@@ -33,14 +33,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<div class="nav-btn"><span></span><span></span><span></span></div>
 	  </div>
 	  <ul class="header-nav">
-		<li class="dropdown"><a href="index.html">HOME</a></li>
-		<li class="dropdown"><a href="about.html">やまびこグループについて</a></li>
-		<li class="dropdown"><a href="index.html#facility">施設一覧</a></li> 
-		<li class="dropdown"><a href="voice.html">スタッフの声</a></li> 
-		<li class="dropdown"><a href="recruit.html#Employee">福利厚生</a></li>
-		<li class="dropdown"><a href="question.html">よくある質問</a></li>	  
-		<li class="dropdown"><a href="recruit.html">採用情報</a></li>
-		<li class="dropdown en"><a href="https://yamabiko-group.or.jp/yamabiko_recruit/recruit.html" target="_blank">エントリー</a></li>
+		<li><a href="index.html">HOME</a></li>
+		<li class="dropdown">
+		  <a href="about.html" class="arrow">やまびこグループについて</a>
+		  <ul class="dropdown-menu">
+			<li><a href="about.html#facility">施設一覧</a></li>
+			<li><a href="about.html#overview">会社概要</a></li>
+		  </ul>
+		</li>
+		<li class="dropdown">
+		  <a href="recruit.html" class="arrow">採用情報</a>
+		  <ul class="dropdown-menu">
+			<li><a href="voice.html">スタッフの声</a></li>
+			<li><a href="recruit.html#employee">福利厚生</a></li>
+			<li><a href="recruit.html#briefing">企業説明会</a></li>
+			<li><a href="question.html">よくある質問</a></li>
+		  </ul>
+		</li>
+		<li><a href="contact.html">お問い合わせ</a></li>	  
+		<li class="en"><a href="https://yamabiko-group.or.jp/yamabiko_recruit/recruit.html" target="_blank">エントリー</a></li>
 	  </ul>
 	</nav>
 </header>
@@ -147,12 +158,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <dd>「やまびこ放課後等デイサービス(藤沢駅前、茅ケ崎)」開始</dd>
     </dl>
   </li>
-  <li class="scroll-anime fadeup-anime">
+  <!--<li class="scroll-anime fadeup-anime">
     <dl>
       <dt>2022年6月</dt>
       <dd>「東戸塚内科健診クリニック」開設</dd>
     </dl>
-  </li>
+  </li>-->
   <li class="scroll-anime fadeup-anime">
     <dl>
       <dt>2022年6月</dt>
@@ -195,24 +206,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	
 
 	
-	
-	
-	
 <!-- 施設一覧マップ -->	
-	
-  <section style="background: #f0f9ff;">
+  <section id="facility" style="background: #f0f9ff;">
 	<div class="section-inner">
 	  <h2 class="heading"><span>Locations</span>施設一覧</h2>
-<div class="section-inner">
-	<iframe src="https://www.google.com/maps/d/embed?mid=1po4NFsEJjs4OMQdCuQnqDRmyJNKVxjL4&hl=ja&ehbc=2E312F" width="95%" height="480" style=" display: block; margin: 0 auto;"></iframe>
-</div>
+	  <div class="section-inner">
+		<iframe src="https://www.google.com/maps/d/embed?mid=1nfdcY9s3rtuxpp0NjTvX0Y4Ebp5v2uo&ehbc=2E312F&noprof=1" width="95%" height="480" style=" display: block; margin: 0 auto;"></iframe>
+	  </div>
 </div>
 </section>	
 
+
 	
 <!-- 会社概要 -->
-  
-	<section>
+	<section id="overview">
 	<div class="section-inner">
 	  <h2 class="heading"><span>Company Overview</span>会社概要</h2>
     <table class="company-table">
