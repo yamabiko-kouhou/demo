@@ -2591,9 +2591,6 @@ height:280px;
 /*------------------- 採用情報 -------------------*/
 /*------------------- 福利厚生 -------------------*/
 
-
-
-
 .benefits {
   padding: 80px 20px;
 }
@@ -2635,15 +2632,9 @@ height:280px;
   transition: 0.3s;
 }
 
-.benefits-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-}
-
-/* アイコン */
 .benefits-card i {
   font-size: 36px;
-  color: #45a2a2; /* あなたのサイトカラーに寄せてる */
+  color: #45a2a2;
   margin-bottom: 15px;
 }
 
@@ -2658,6 +2649,9 @@ height:280px;
   font-size: 13px;
   color: #666;
   line-height: 1.6;
+}
+.benefits-card p span {
+	display: inline-block;
 }
 
 /* タブレット */
