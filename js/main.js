@@ -1,35 +1,29 @@
 // ドロップダウンメニューの設定
-$('.dropdown').hover(
-  function() {
-    $(this).children('.dropdown-menu').addClass('open');
-  }, function() {
-    $(this).children('.dropdown-menu').removeClass('open');
-  }
-);
-
-$('.dropdown > a').on('click', function(e) {
-  if (window.innerWidth <= 1600) { // スマホ判定
-    e.preventDefault(); // ← リンク遷移止める
-
-    $(this).next('.dropdown-menu').slideToggle();
-    $(this).parent().toggleClass('open');
-  }
-});
-// スマホ用メニューの設定
 $(function() {
+  if (window.innerWidth > 1080) {
+	//PC表示
+    $('.dropdown').hover(
+      function() {
+        $(this).children('.dropdown-menu').addClass('open');
+      },
+      function() {
+        $(this).children('.dropdown-menu').removeClass('open');
+      }
+    );
+  }
+
+  //スマホ表示
   $('.nav-btn-wrap').on('click', function() {
-    if ($(this).hasClass('active')) {
-      // スマホ用メニューが表示されていたとき
-      $(this).removeClass('active');
-      $('.header-nav').addClass('close');
-      $('.header-nav-wrap , body').removeClass('open');
-    } else {
-      // スマホ用メニューが非表示のとき
-      $(this).addClass('active');
-      $('.header-nav').removeClass('close');
-      $('.header-nav-wrap , body').addClass('open');
+    $(this).toggleClass('active');
+    $('.header-nav-wrap, body').toggleClass('open');
+  });
+  $('.header-nav a').on('click', function() {
+    if (window.innerWidth <= 1080) {
+      $('.nav-btn-wrap').removeClass('active');
+      $('.header-nav-wrap, body').removeClass('open');
     }
   });
+
 });
 
 
@@ -128,6 +122,34 @@ Stickyfill.remove(elements);
 
 
 
+//タブメニュー
+function GethashID (hashIDName){
+	if(hashIDName){
+		$('.tab li').find('a').each(function() {
+			var idName = $(this).attr('href'); 	
+			if(idName == hashIDName){
+				var parentElm = $(this).parent(); 
+				$('.tab li').removeClass("active");
+				$(parentElm).addClass("active");
+				$(".tab-area").removeClass("is-active");
+				$(hashIDName).addClass("is-active");
+			}
+		});
+	}
+}
+$('.tab a').on('click', function() {
+	var idName = $(this).attr('href');
+	GethashID (idName);
+	return false;
+});
+
+$(window).on('load', function () {
+	var hashName = location.hash;
+	GethashID (hashName);
+});
+
+
+
 //トップへ戻る
 let $pagetop = $('.gotop');
   $(window).on( 'scroll', function () {
@@ -137,23 +159,6 @@ let $pagetop = $('.gotop');
       $pagetop.addClass('isActive');
     }
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
