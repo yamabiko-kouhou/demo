@@ -1475,7 +1475,18 @@ height:280px;
 		opacity: 1;
 	}
 }
-.tab-area h3 {
+.tab-area .tab-title {
+	margin-bottom: 8px;
+	display: flex;
+	align-items: center;
+}
+.tab-area .tab-title img {
+	width: 15%;
+}
+.tab-area .tab-title div {
+	margin-left: 20px;
+}
+.tab-area .tab-title div h3 {
 	margin: 0 auto 20px;
 	color: #45a2a2;
 	font-size: 1.5rem;
@@ -1483,6 +1494,7 @@ height:280px;
 }
 .tab-area h4 {
 	margin: 30px 0 10px;
+	color: #45a2a2;
 }
 .tab-area ul {
 	display: grid;
@@ -1562,7 +1574,17 @@ height:280px;
 		padding: 12px 5px;
 		font-size: .8rem;
 	}
-	.tab-area h3 {
+	.tab-area .tab-title {
+		flex-direction: column;
+	}
+	.tab-area .tab-title img {
+		width: 60%;
+		margin: 0 auto;
+	}
+	.tab-area .tab-title div {
+		margin-left: 0;
+	}
+	.tab-area .tab-title div h3 {
 		margin: 20px auto 10px;
 		font-size: 2rem;
 	}
@@ -1692,28 +1714,25 @@ text-align:center;
 }
 
 /* メインボタン */
-
 .entry-btn.main{
 background:#ea7913;
 color:#fff;
 }
-
 .entry-btn.main:hover{
 background:#e84215;
 transform:translateY(-2px);
 }
 
 /* サブボタン */
-
 .entry-btn.sub{
 border:2px solid #ea7913;
 color:#ea7913;
 background:#fff;
 }
-
 .entry-btn.sub:hover{
-background:#e84215;
+background:#ea7913;
 color:#fff;
+transform:translateY(-2px);
 }
 
 /* スマホ */
@@ -1854,25 +1873,18 @@ border-top:1px dotted #FFFFFF;
 
 
 
-
-
 /*------------------- スタッフの声 -------------------*/
-
-
 .staff-voice{
 padding: 40px 20px;
 }
 
 .staff-grid{
-
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:30px;
-
 }
 
 /* カード */
-
 .staff-card{
 position:relative;
 display:block;
@@ -1880,95 +1892,52 @@ overflow:hidden;
 border-radius:12px;
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
 transition:0.3s;
-
 }
 
 .staff-card:hover{
-
 transform:translateY(-6px);
 box-shadow:0 15px 30px rgba(0,0,0,0.12);
-
 }
 
 .staff-card img{
-
 width:100%;
 height:320px;
 object-fit:cover;
 display:block;
-
 }
 
 /* 情報 */
-
 .staff-info{
-
 position:absolute;
 bottom:0;
 left:0;
 right:0;
 padding:20px;
-background:linear-gradient(
-transparent,
-rgba(0,0,0,1.6)
-);
-
+background:linear-gradient(transparent,rgba(0,0,0,1.6));
 color:#fff;
-
 }
-
 .staff-year{
-
 font-size:13px;
 opacity:0.9;
 margin-bottom: -1px;
-
 }
-
 .staff-job{
-
 font-size:22px;
 font-weight:700;
 margin-bottom: -8px;
 }
 
 /* タブレット */
-
 @media(max-width:1024px){
-
 .staff-grid{
-
 grid-template-columns:repeat(2,1fr);
-
 }
-
 }
-
-/* スマホ */
-
-@media(max-width:600px){
-
-.staff-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.staff-card img{
-
-height:280px;
-
-}
-
-}	
 	
 
 
 /*------------------- スタッフの声 -------------------*/
-
-
-
-	.voice {
+.voice {
   padding: 100px 20px;
 }
 
