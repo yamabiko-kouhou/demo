@@ -1288,6 +1288,9 @@ width:80%;
   font-size: 0.8rem;   
   line-height: 1.2;
 }
+.clinic-card h3 span {
+	display: inline-block;
+}
 
 @media screen and (max-width: 768px) {
   .clinic-list {
