@@ -1262,21 +1262,16 @@ width:80%;
 	
 /* カード一覧全体 */
 .clinic-list {
-  padding: 1rem;
+	padding: 1rem;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-row-gap: 20px;
+	grid-column-gap: 20px;
 }
-
 .clinic-list h2 {
   text-align: center;
   margin-bottom: 2rem;
   font-size: 2rem;
-}
-
-/* カードのレイアウト */
-.clinic-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
 }
 
 /* カード自体 */
@@ -1312,8 +1307,8 @@ width:80%;
 
 /* レスポンシブ：スマホは2列 */
 @media screen and (max-width: 768px) {
-  .clinic-card {
-    width: 45%; 
+  .clinic-list {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
