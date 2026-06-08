@@ -44,7 +44,7 @@ $(function() {
 
 
 
-// スクロールでアニメーション
+// 数字で見るやまびこ
 const stats = document.querySelectorAll('.stat');
 function animateCircle(circle,percent){
 let start=0;
@@ -53,7 +53,7 @@ if(start<=percent){
 circle.querySelector('.percent').textContent=start+"%";
 const deg=(start/100)*360;
 circle.style.background=
-`conic-gradient(#f9d5c7 0deg ${deg}deg,#a8d5e5 ${deg}deg 360deg)`;
+`conic-gradient(#FA7B4C 0deg ${deg}deg,#00ABCA ${deg}deg 360deg)`;
 start++;
 }else{
 clearInterval(interval);
@@ -70,11 +70,11 @@ const deg=(progress/100)*360;
 chart.style.background=
 
 `conic-gradient(
-#f9d5c7 0% ${progress*0.2}%,
-#ffd6a5 ${progress*0.2}% ${progress*0.5}%,
-#a8d5e5 ${progress*0.5}% ${progress*0.75}%,
-#cdb4db ${progress*0.75}% ${progress*0.9}%,
-#bde0fe ${progress*0.9}% ${progress}%
+#FA7B4C 0% ${progress*0.2}%,
+#F7C400 ${progress*0.2}% ${progress*0.5}%,
+#B4C241 ${progress*0.5}% ${progress*0.75}%,
+#35B3A6 ${progress*0.75}% ${progress*0.9}%,
+#00ABCA ${progress*0.9}% ${progress}%
 )`;
 
 }else{
