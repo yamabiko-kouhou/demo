@@ -109,6 +109,7 @@ window.addEventListener('scroll',checkStats);
 window.addEventListener('load',checkStats);
 
 
+
 //2分割スクロール画面
 $(window).on('load resize', function() {
 var windowWidth = window.innerWidth;
@@ -119,6 +120,23 @@ Stickyfill.add(elements);
 Stickyfill.remove(elements);
 } 
 });
+
+
+
+//選考の流れ
+const flowItems = document.querySelectorAll('.flow3-item');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('show');
+      }, i * 200);
+    }
+  });
+}, { threshold: 0.3 });
+
+flowItems.forEach(item => observer.observe(item));
 
 
 
