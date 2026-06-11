@@ -1535,11 +1535,11 @@ border-top:1px dotted #FFFFFF;
 }
 .flow3-head {
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
 }
 .flow3-head h2 {
   font-size: 34px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 .flow3-head p {
   color: #666;
@@ -1547,7 +1547,7 @@ border-top:1px dotted #FFFFFF;
 }
 .flow3-track {
   position: absolute;
-  top: 200px;
+  top: 160px;
   left: 0;
   width: 100%;
   height: 6px;
@@ -1600,7 +1600,7 @@ border-top:1px dotted #FFFFFF;
 .flow3-item:hover .circle {
   transform: scale(1.1);
 }	
-@media (max-width: 1024px) {
+@media (max-width: 700px) {
   .flow3-list {
     flex-direction: column;
     gap: 60px;
@@ -1622,14 +1622,7 @@ border-top:1px dotted #FFFFFF;
     top: 0;
     width: 6px;
     height: 100%;
-    background: linear-gradient(
-      to bottom,
-      #45a2a2,
-      #4fc3a1,
-      #7ad66f,
-      #f2c94c,
-      #eb5757
-    );
+    background: linear-gradient(to bottom,#45a2a2,#4fc3a1,#7ad66f,#f2c94c,#eb5757);
     border-radius: 10px;
   }
   .circle {
@@ -1654,9 +1647,39 @@ border-top:1px dotted #FFFFFF;
 }
 
 /*募集要項*/
+.tab-category-new {
+	margin: 80px auto 20px;
+}
+.tab-category-new .tab li a {
+	border: 1px solid #6091D3;
+}
+.tab-category-new .tab li.active a,
+.tab-category-new .tab li a:hover {
+	background: #6091D3;
+}
+.tab-area-new {
+	padding: 0;
+	background: none;
+}
+.tab-area-new ul.dot {
+	display: block; 
+	padding: 0;
+	border-bottom: none;
+}
+.tab-area ul.dot li {
+	position: relative;
+	padding: 0 0 0 .7em;
+	box-shadow: none;
+	font-size: 1rem;
+	font-weight: normal;
+}
+.tab-area li a {
+	display: block;
+	transition: .3s;
+}
 .table02 {
 	width: 96%;
-	margin: 50px auto 0;
+	margin: 20px auto 0;
 	border-collapse: collapse;
 }
 .table02 th,
@@ -1676,6 +1699,11 @@ border-top:1px dotted #FFFFFF;
 	padding: 20px;
 	line-height: 30px;
 	background-color: #FFF;
+}
+@media (max-width: 885px) {
+	.tab-category-new {
+		margin: 50px auto 0;
+	}
 }
 @media screen and (max-width: 787px)  {
 	.table02 {
@@ -1697,7 +1725,7 @@ border-top:1px dotted #FFFFFF;
 		font-size: 16px;
 		line-height: 30px;
 	}
-	.table_03 {
+	.tab-area-new .btn a {
 		width: 100%;
 	}
 }
