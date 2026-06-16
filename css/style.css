@@ -2397,6 +2397,10 @@ dl.faq dd::before{
 	background: #169CC9;
 	content: '';
 }
+.disease a {
+	color: #6091D3;
+	text-decoration: underline;
+}
 
 .disease-flex {
 	display: flex;
@@ -2443,7 +2447,7 @@ dl.faq dd::before{
 	display: inline-block;
 	top: -2px;
 	left: -2px;
-	padding: 3px 16px;
+	padding: 1px 16px;
 	height: 25px;
 	background: #169CC9;
 	font-size: 15px;
