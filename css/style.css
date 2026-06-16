@@ -273,6 +273,9 @@ header {
 	.arrow::after {
 		display: none;
 	}
+	div.arrow {
+		display: none;
+	}
 	.nav-btn,
 	.nav-btn span {
 		display: inline-block;
@@ -596,17 +599,13 @@ section {
 		margin-top: 12px;
 	}
 }
-@media (max-width: 885px) {
-	.heading {
-		
-	}
-}
 @media (max-width: 767px) {
 	.main {
 		overflow: hidden;
 	}
 	section {
 		margin: 0 auto;
+		padding: 30px 0;
 	}
 	.heading {
 		margin: 50px auto;
@@ -772,14 +771,14 @@ margin:10px auto 0;
     align-items: flex-start;
 }
 .about-text{
-  flex:1;
+	flex:1;
 }
 .about-img{
-  flex:1;
+	flex:1;
 }
 .about-img img{
-  width:100%;
-  height:auto;
+	width:100%;
+	height:auto;
 }
 .about-flex figure {
 	width: 60%;
@@ -878,6 +877,13 @@ margin:10px auto 0;
 	.text-area-box {
 		min-height:auto;
 	}
+	.text-area-box h3 {
+		font-size: 1.3rem;
+		text-align: left;
+	}
+	.text-area-box h3 span {
+		display: inline;
+	}
 	.font-size {
 		font-size: 1.1rem;
 	}
@@ -948,69 +954,76 @@ margin-bottom: -8px;
 
 /* 数字で見るやまびこ */
 .stats-section{
-padding:80px 20px;
-background:#fff;
-text-align:center;
-font-family:"游ゴシック",sans-serif;
+	padding:80px 20px;
+	background:#fff;
+	font-family:"游ゴシック",sans-serif;
+	text-align:center;
 }
 .section-title{
-font-size:32px;
-margin-bottom:60px;
+	font-size:32px;
+	margin-bottom:60px;
 }
 .stats-container{
-display:flex;
-justify-content:center;
-gap:60px;
-flex-wrap:wrap;
+	display:flex;
+	justify-content:center;
+	gap:60px;
+	flex-wrap:wrap;
 }
 .stat{
-width:220px;
+	width:220px;
+}
+.sub-label {
+	font-size: .9rem;
 }
 
 /* 円グラフ */
-.circle{
-width:160px;
-height:160px;
-border-radius:50%;
-background:conic-gradient(#B4C241 0deg,#B4C241 360deg);
-display:flex;
-align-items:center;
-justify-content:center;
-margin:0 auto 20px;
+.stats-circle{
+	width:160px;
+	height:160px;
+	border-radius:50%;
+	background:conic-gradient(#B4C241 0deg,#B4C241 360deg);
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	margin:0 auto 20px;
 }
 .percent{
-font-size:28px;
-font-weight:bold;
+	font-size:28px;
+	font-weight:bold;
 }
 
 /* 年齢グラフ */
+.age-stat {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
 .age-chart{
-width:160px;
-height:160px;
-border-radius:50%;
-margin:0 auto 20px;
-background:conic-gradient(#eee 0deg,#eee 360deg);
+	width:160px;
+	height:160px;
+	border-radius:50%;
+	background:conic-gradient(#eee 0deg,#eee 360deg);
+	margin:0 auto 20px;
 }
 
 /* 凡例 */
 .age-legend{
-list-style:none;
-padding:0;
-margin-top:10px;
-font-size:14px;
-text-align:left;
+	margin-top:10px;
+	padding:0;
+	list-style:none;
+	font-size:14px;
 }
 .age-legend li{
-display:flex;
-align-items:center;
-margin:4px 0;
+	margin:4px 0;
+	display:flex;
+	align-items:center;
 }
 .age-legend span{
-width:12px;
-height:12px;
-display:inline-block;
-border-radius:3px;
-margin-right:8px;
+	margin-right:8px;
+	display:inline-block;
+	width:12px;
+	height:12px;
+	border-radius:3px;
 }
 .c1{background:#FA7B4C;}
 .c2{background:#F7C400;}
@@ -1018,11 +1031,11 @@ margin-right:8px;
 .c4{background:#35B3A6;}
 .c5{background:#00ABCA;}
 @media (max-width:768px){
-.stats-container{
-flex-direction:column;
-align-items:center;
-gap:40px;
-}
+	.stats-container{
+		flex-direction:column;
+		align-items:center;
+		gap:40px;
+	}
 }
 			
 .stats-cards{
@@ -1061,17 +1074,15 @@ font-size:14px;
 color:#666;
 letter-spacing:0.05em;
 }
-
 @media (max-width:768px){
-.stats-cards{
-flex-direction:column;
-align-items:center;
-gap:20px;
-
-}
-.stats-card{
-width:80%;
-}
+	.stats-cards{
+		flex-direction:column;
+		align-items:center;
+		gap:20px;
+	}
+	.stats-card{
+		width:80%;
+	}
 }
 			
 	
@@ -1460,11 +1471,6 @@ width:80%;
     background: linear-gradient(to bottom,#45a2a2,#4fc3a1,#7ad66f,#f2c94c,#eb5757);
     border-radius: 10px;
   }
-  .circle {
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
 }
 @media (max-width: 600px) {
   .flow3 {
@@ -1597,7 +1603,7 @@ width:80%;
 @media (max-width: 885px) {
 	.tab-category {
 		width: 90%;
-		margin: 0 auto;
+		margin: 50px auto 0;
 		padding: 20px 10px;
 	}
 	.tab li {
@@ -1612,7 +1618,6 @@ width:80%;
 @media (max-width: 767px) {
 	.tab-category {
 		width: 100%;
-		margin: 0 auto;
 		padding: 0 0 20px;
 	}
 	.tab {
@@ -1696,11 +1701,6 @@ width:80%;
 	padding: 20px;
 	line-height: 30px;
 	background-color: #FFF;
-}
-@media (max-width: 885px) {
-	.tab-category-new {
-		margin: 50px auto 0;
-	}
 }
 @media screen and (max-width: 787px)  {
 	.table02 {
