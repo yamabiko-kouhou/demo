@@ -102,6 +102,7 @@ header {
 }
 .header-nav li a:hover {
 	color: #6091D3;
+	text-decoration: none;
 }
 .header-nav .dropdown-menu {
 	display: none;
@@ -144,7 +145,9 @@ header {
 	}
 	.header-nav .en:hover {
 		background: #6091D3;
-		color: #FFFFFF;
+	}
+	.header-nav li.en a:hover {
+		color: #fff;
 	}
 }
 
@@ -831,7 +834,7 @@ margin:10px auto 0;
 	display: inline-block;
 }
 .text-area-box li {
-	margin: 30px auto;
+	margin: 0 auto 20px;
 	line-height: 1.7;
 }
 .font-size {
@@ -853,12 +856,11 @@ margin:10px auto 0;
 	.about-flex figure {
 		margin: 0 auto;
 	}
-
-.about-img{
-  order: -1;
-  margin-top:-20px;
-  margin-bottom: 15px;
-}
+	.about-img{
+		order: -1;
+		margin-top:-20px;
+		margin-bottom: 15px;
+	}
 
 	#partition-wrapper {
 		display: block;
@@ -879,54 +881,6 @@ margin:10px auto 0;
 	.font-size {
 		font-size: 1.1rem;
 	}
-}
-
-
-/* 施設一覧 */
-.clinic-list {
-	margin: 0 auto;
-	padding: 1rem;
-	display: grid;
-	grid-template-columns: repeat(5, 1fr);
-	grid-row-gap: 20px;
-	grid-column-gap: 20px;
-}
-
-.clinic-card {
-  max-width: 230px;       
-  text-align: center;
-  background-color: #fff;
-  overflow: hidden;
-  text-decoration: none;
-  color: #333;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.clinic-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-.clinic-card h3 {
-  padding: 0.8rem 0.7rem;
-  font-size: 0.8rem;   
-  line-height: 1.2;
-}
-.clinic-card h3 span {
-	display: inline-block;
-}
-@media screen and (max-width: 768px) {
-  .clinic-list {
-	  grid-template-columns: repeat(2, 1fr);
-	  grid-row-gap: 15px;
-	  grid-column-gap: 10px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .clinic-list {
-	  grid-template-columns: repeat(2, 1fr);
-	  grid-row-gap: 15px;
-	  grid-column-gap: 10px;
-  }
 }
 
 
@@ -1152,7 +1106,6 @@ width:80%;
   padding: 30px 20px 10px;
   text-align: center;
   box-shadow: 0 6px 15px rgba(0,0,0,0.05);
-  transition: 0.3s;
 }
 .benefits-card i {
   font-size: 36px;
@@ -1172,101 +1125,96 @@ width:80%;
 	display: inline-block;
 }
 @media (max-width: 1024px) {
-  .benefits-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
+	.benefits-list {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
 @media (max-width: 600px) {
-  .benefits-list {
-    grid-template-columns: 1fr;
-  }
-  .benefits {
-    padding: 60px 15px;
-  }
+	.benefits-list {
+		grid-template-columns: repeat(1, 1fr);
+	}
+	.benefits {
+		padding: 60px 15px;
+	}
+	.benefits-card {
+		padding: 30px 10px 10px;
+	}
 }
 
 
 /*下部エントリーボタン2個並び*/
 .entry-cta{
-background:#f5f9f9;
-padding:80px 20px;
-text-align:center;
+	padding: 80px 20px;
+	background: #f5f9f9;
+	text-align: center;
 }
-
 .entry-inner{
-max-width:900px;
-margin:0 auto;
-text-align:center;
+	max-width: 900px;
+	margin: 0 auto;
 }
-
 .entry-cta h2{
-font-size:2rem;
-margin-bottom:20px;
+	font-size: 2rem;
+	margin-bottom: 20px;
 }
-
 .entry-cta p{
-font-size:1rem;
-line-height:1.8;
-margin-bottom:40px;
-color:#555;
+	line-height: 1.8;
+	margin-bottom: 40px;
+	color: #555;
 }
-
 .entry-buttons{
-display:flex;
-justify-content:center;
-gap:30px;
-flex-wrap:wrap;
-max-width:500px;
-margin:0 auto;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-row-gap: 20px;
+	grid-column-gap: 20px;
 }
-
 .entry-btn{
-display:inline-block;
-padding:18px 40px;
-border-radius:40px;
-text-decoration:none;
-font-size:1.05rem;
-font-weight:bold;
-transition:.3s;
-min-width:220px;
-text-align:center;
+	display: inline-block;
+	padding: 25px 40px;
+	border-radius: 100vw;
+	text-decoration :none;
+	font-size: 1.34rem;
+	font-weight: bold;
+	text-align: center;
+	transition: .3s;
+	width: 350px;
 }
-
-/* メインボタン */
 .entry-btn.main{
-background:#ea7913;
-color:#fff;
+	background: #ea7913;
+	color: #fff;
 }
 .entry-btn.main:hover{
-background:#e84215;
-transform:translateY(-2px);
+	background: #e84215;
+	transform: translateY(-2px);
 }
-
-/* サブボタン */
 .entry-btn.sub{
-border:2px solid #ea7913;
-color:#ea7913;
-background:#fff;
+	border: 2px solid #ea7913;
+	color: #ea7913;
+	background: #fff;
 }
 .entry-btn.sub:hover{
-background:#ea7913;
-color:#fff;
-transform:translateY(-2px);
+	border: 2px solid #e84215;
+	background: #e84215;
+	color: #fff;
+	transform: translateY(-2px);
 }
-
 @media (max-width:767px){
 	.entry-cta{
-		padding:60px 20px;
+		padding: 60px 20px;
 	}
 	.entry-cta h2{
-		font-size:1.5rem;
+		font-size: 1.5rem;
 	}
 	.entry-cta p{
-		font-size:0.95rem;
+		font-size: 0.9rem;
+	}
+	.entry-buttons {
+		grid-template-columns: repeat(1, 1fr);
+		grid-column-gap: 0;
 	}
 	.entry-btn{
-		width:100%;
-		max-width:300px;
+		width: 100%;
+		margin: 0 auto;
 	}
 }
 
@@ -1326,31 +1274,84 @@ transform:translateY(-2px);
     left: 8px;
   }
 }
+
+
+/* 施設一覧 */
+.clinic-list {
+	margin: 10px auto 0;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-row-gap: 20px;
+	grid-column-gap: 20px;
+}
+.clinic-card {
+	background-color: #fff;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+	color: #333;
+	transition: transform 0.3s, box-shadow 0.3s;
+	text-decoration: none;
+}
+.clinic-card:hover {
+	box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+	transform: translateY(-5px);
+}
+.clinic-card a {
+	display: block;
+	padding: 15px 20px 10px;
+}
+.clinic-card div {
+	display: flex;
+	align-items: baseline;
+}
+.clinic-card h3 {
+	margin-bottom: 10px;
+	font-size: 1rem;
+	line-height: 1.1;
+}
+.clinic-card i {
+	margin-right: 10px;
+	color: #183263;
+}
+.clinic-card i.day {
+	color: #991D1D;
+	font-size: 1.1rem;
+}
+.clinic-card p {
+	margin: 0;
+	font-size: .8rem;   
+}
+@media screen and (max-width: 768px) {
+  .clinic-list {
+	  grid-template-columns: repeat(1, 1fr);
+	  grid-row-gap: 15px;
+	  grid-column-gap: 10px;
+  }
+}
 	
 /* 会社概要 */
 .company-table{
-width:100%;
-max-width:700px;
-margin:40px auto 0;
-border-collapse:collapse;
-font-size:15px;
+	width:100%;
+	max-width:700px;
+	margin:40px auto 0;
+	border-collapse:collapse;
+	font-size:15px;
 }
 .company-table th,
 .company-table td{
-padding:18px 20px;
-border-bottom:1px dotted #FFFFFF;
-text-align:left;
-vertical-align:top;
+	padding:18px 20px;
+	border-bottom:1px dotted #fff;
+	text-align:left;
+	vertical-align:top;
 }
 .company-table th{
-width:30%;
-font-weight:600;
+	width:30%;
+	font-weight:600;
 }
 .company-table tr:first-child th{
-border-top:1px dotted #FFFFFF;
+	border-top:1px dotted #fff;
 }
 .company-table tr:first-child td{
-border-top:1px dotted #FFFFFF;
+	border-top:1px dotted #fff;
 }
 
 
@@ -2242,4 +2243,286 @@ dl.faq dd::before{
   .privacy-section h2 {
     font-size: 16px;
   }
+}
+
+
+
+/*------------------- 疾患一覧ページ -------------------*/
+.disease-accordion {
+	margin: 0 1em 1em;
+}
+.disease-accordion:not([open]) {
+	margin-bottom: 7px;
+}
+.disease-accordion summary {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	padding: 1em 2em;
+	border-left: 5px solid #003466;
+	background-color: #f1efe9;
+	color: #333;
+	font-weight: 600;
+	font-size: 1.1rem;
+	cursor: pointer;
+}
+.disease-accordion summary::-webkit-details-marker {
+	display: none;
+}
+.disease-accordion summary::after {
+	transform: translateY(-25%) rotate(45deg);
+	width: 7px;
+	height: 7px;
+	margin-left: 10px;
+	border-bottom: 3px solid #c2c2c2;
+	border-right: 3px solid #c2c2c2;
+	content: '';
+	transition: transform .3s;
+}
+.disease-accordion[open] summary::after {
+	transform: rotate(225deg);
+}
+.disease-accordion .disease-list {
+	margin: 0;
+	padding: 2em 2em 1em 2em;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-row-gap: 20px;
+	grid-column-gap: 20px;
+	animation: fadeIn .3s;
+}
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(-8px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+.disease-accordion[open] .disease-list {
+	transform: none;
+	opacity: 1;
+}
+.disease-accordion .disease-list a {
+	padding: 10px;
+	border: 1px solid #bbb;
+	box-shadow: 1px 1px 5px #bbb;
+	color: #333;
+	font-weight: bold;
+	font-size: 1rem;
+	text-decoration: none;
+	transition: .3s;
+}
+.disease-accordion .disease-list a:hover {
+	box-shadow: none;
+}
+@media screen and (max-width:640px) {
+	.disease-accordion .disease-list {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+
+
+
+/*------------------- 疾患詳細ページ -------------------*/
+/* パンくずリスト */
+.pankuzu {
+	width: 100%;
+	margin-top: 70px;
+	padding: 10px 0;
+	background-color: #E0DDD8;
+	border-bottom: 1px solid #D6D1CB;
+	color: #555;
+	font-size: .8rem;
+	line-height: 30px;
+}
+.pankuzu ul {
+	width: 96%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.pankuzu li {
+	display: inline-block;
+}
+.pankuzu li a {
+	text-decoration: none;
+	color: #999;
+}
+.pankuzu li::after {
+	content: ">";
+	padding: 0 10px;
+}
+.pankuzu li a:hover {
+	color: #111;
+}
+.pankuzu li i {
+	padding-right: 5px;
+}
+.pankuzu li:last-child::after {
+	display: none;
+}
+
+.disease h2 {
+	margin-bottom: 30px;
+	padding: 15px 10px;
+	color: #1D1B2C;
+	font-size: 1.7rem;
+	line-height: 1.2;
+	text-align: center;
+	letter-spacing: 2px;
+	border-bottom: 1px solid #CBC8BE;
+	clear: both;
+}
+.disease h3 {
+	position: relative;
+	margin: 40px 0 20px;
+	padding: 15px 10px 15px 44px;
+	background: #eee;
+	border-radius: 10px;
+	color: #333;
+	font-size: 1.2rem;
+	line-height: 30px;
+	clear: both;
+}
+.disease h3::after {
+	display: block;
+	width: 3px;
+	height: 20px;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	background: #169CC9;
+	content: '';
+}
+
+.disease-flex {
+	display: flex;
+	align-items: flex-start;
+}
+.disease-flex img {
+	display: block;
+	width: 30%;
+	margin: 0 0 0 30px;
+}
+@media screen and (max-width: 787px) {
+	.disease-flex {
+		flex-direction: column;
+	}
+	.disease-flex img {
+		text-align: center;
+		margin: 30px auto 0;
+		width: 100%;
+	}
+}
+
+.disease-list {
+	margin-left: 5%;
+}
+.disease-list li {
+	list-style: disc;
+}
+@media screen and (max-width: 767px) {
+	.disease-list {
+		margin-left: 40px;
+	}
+}
+		
+/* 発症しやすい部位 */
+.box28 {
+	position: relative;
+	margin: 1em 0;
+	padding: 35px 10px 0px;
+	border: solid 2px #169CC9;
+	max-width: 600px;
+}
+.box28 .box-title {
+	position: absolute;
+	display: inline-block;
+	top: -2px;
+	left: -2px;
+	padding: 3px 16px;
+	height: 25px;
+	background: #169CC9;
+	font-size: 15px;
+	color: #fff;
+	font-weight: bold;
+	line-height: 25px;
+}
+.box28 p {
+	margin: 0; 
+	padding: 10px;
+}
+
+/* 体外衝撃波 */
+.taigai {
+    position: relative;
+    padding: 2em 1.5em;
+    margin: 2em 0;
+    border: solid 3px #015D9C;
+    border-radius: 8px;
+    color: #000;
+}	
+.taigai .sample_box_title{
+    position: absolute;
+    display: inline-block;
+    top: -13px;
+    left: 10px;
+    padding: 0 10px;
+    line-height: 1;
+    font-size: 1.3em;
+    background: #fff;
+    color: #015D9C;
+    font-weight: bold;
+}
+
+/* よくある質問アコーディオン */
+.accordion-005 {
+	max-width: 700px;
+	margin: 0 1em 1em;
+}
+.accordion-005:not([open]) {
+	margin-bottom: 7px;
+}
+.accordion-005 summary {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	padding: 1em 2em;
+	border-left: 5px solid #003466;
+	background-color: #f1efe9;
+	color: #333333;
+	font-weight: 600;
+	cursor: pointer;
+}
+.accordion-005 summary::-webkit-details-marker {
+	display: none;
+}
+.accordion-005 summary::after {
+	transform: translateY(-25%) rotate(45deg);
+	width: 7px;
+	height: 7px;
+	margin-left: 10px;
+	border-bottom: 3px solid #c2c2c2;
+	border-right: 3px solid #c2c2c2;
+	content: '';
+	transition: transform .3s;
+}
+.accordion-005[open] summary::after {
+	transform: rotate(225deg);
+}
+.accordion-005 p {
+	transform: translateY(-10px);
+	opacity: 0;
+	margin: 0;
+	padding: 1em 2em 2em 2em;
+	color: #333333;
+	transition: transform .5s, opacity .5s;
+}
+.accordion-005[open] p {
+	transform: none;
+	opacity: 1;
 }
