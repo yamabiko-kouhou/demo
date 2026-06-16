@@ -499,7 +499,7 @@ footer {
 }
 @media (max-width:767px){
 	.hero{
-		height:85vh;
+		height:75vh;
 	}
 	.hero-copy{
 		left:6%;
