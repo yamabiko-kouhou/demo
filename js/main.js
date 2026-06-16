@@ -46,67 +46,99 @@ $(function() {
 
 // 数字で見るやまびこ
 const stats = document.querySelectorAll('.stat');
-function animateCircle(circle,percent){
-let start=0;
-const interval=setInterval(()=>{
-if(start<=percent){
-circle.querySelector('.percent').textContent=start+"%";
-const deg=(start/100)*360;
-circle.style.background=
-`conic-gradient(#FA7B4C 0deg ${deg}deg,#00ABCA ${deg}deg 360deg)`;
-start++;
-}else{
-clearInterval(interval);
-}
-},15);
+
+/* 円グラフアニメ */
+function animateCircle(circle, percent){
+	let start = 0;
+	const interval = setInterval(() => {
+		if(start <= percent){
+
+			/* 数字変更 */
+			circle.querySelector('.percent').textContent = start + "%";
+			/* 円グラフ描画 */
+			const deg = (start / 100) * 360;
+
+			circle.style.background =
+			`conic-gradient(
+				#FA7B4C 0deg ${deg}deg,
+				#00ABCA ${deg}deg 360deg
+			)`;
+			start++;
+		}else{
+			clearInterval(interval);
+		}
+	}, 15);
 }
 
+/* 年齢構成グラフ */
 function animateAgeChart(chart){
-let progress=0;
-const interval=setInterval(()=>{
-progress++;
-if(progress<=100){
-const deg=(progress/100)*360;
-chart.style.background=
+	let progress = 0;
+	const interval = setInterval(() => {
+		progress++;
 
-`conic-gradient(
-#FA7B4C 0% ${progress*0.2}%,
-#F7C400 ${progress*0.2}% ${progress*0.5}%,
-#B4C241 ${progress*0.5}% ${progress*0.75}%,
-#35B3A6 ${progress*0.75}% ${progress*0.9}%,
-#00ABCA ${progress*0.9}% ${progress}%
-)`;
-
-}else{
-clearInterval(interval);
-}
-},15);
+		if(progress <= 100){
+			chart.style.background =
+			`conic-gradient(
+				#FA7B4C 0% ${progress * 0.2}%,
+				#F7C400 ${progress * 0.2}% ${progress * 0.5}%,
+				#B4C241 ${progress * 0.5}% ${progress * 0.75}%,
+				#35B3A6 ${progress * 0.75}% ${progress * 0.9}%,
+				#00ABCA ${progress * 0.9}% ${progress}%
+			)`;
+		}else{
+			clearInterval(interval);
+		}
+	}, 15);
 }
 
+/* 画面内に入ったか判定 */
 function isInViewport(el){
-const rect=el.getBoundingClientRect();
-return rect.top < window.innerHeight;
+	const rect = el.getBoundingClientRect();
+
+	return (
+		rect.top < window.innerHeight &&
+		rect.bottom > 0
+	);
 }
 
+/* スクロール時チェック */
 function checkStats(){
-stats.forEach(stat=>{
-
-if(!stat.classList.contains('animated') && isInViewport(stat)){
-stat.classList.add('animated');
-
-if(stat.dataset.percent){
-animateCircle(stat.querySelector('.circle'),parseInt(stat.dataset.percent));
+	stats.forEach(stat => {
+		if(
+			!stat.classList.contains('animated') &&
+			isInViewport(stat)
+		){
+			stat.classList.add('animated');
+			/* 円グラフ */
+			if(stat.dataset.percent){
+				animateCircle(
+					stat.querySelector('.stats-circle'),
+					parseInt(stat.dataset.percent)
+				);
+			}
+			/* 年齢構成 */
+			if(stat.classList.contains('age-stat')){
+				animateAgeChart(
+					stat.querySelector('.age-chart')
+				);
+			}
+		}
+	});
 }
 
-if(stat.classList.contains('age-stat')){
-animateAgeChart(stat.querySelector('.age-chart'));
-}
-}
+/* 初回読み込み */
+window.addEventListener('load', () => {
+	/* Safari対策 */
+	setTimeout(() => {
+		checkStats();
+	}, 300);
 });
-}
 
-window.addEventListener('scroll',checkStats);
-window.addEventListener('load',checkStats);
+/* スクロール時 */
+window.addEventListener('scroll', checkStats);
+
+/* リサイズ時 */
+window.addEventListener('resize', checkStats);
 
 
 
